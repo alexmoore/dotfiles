@@ -4,7 +4,7 @@
 ""Colors
 
 set gfn=Menlo\ Regular:h16  " make font bigger
-colorscheme github          " like all the cool kids
+colorscheme molokai         " 
 set t_Co=256                " use 256 colors by default
 syntax enable               " enable syntax processing
 "set background=dark         " set dark background
@@ -28,7 +28,7 @@ set shiftround                  " round alignment to nearest indent
 
 ""UI Config
 
-set number                  " show line numbers
+"set number                  " show line numbers
 set showcmd                 " show command in bottom bar
 set cursorline              " highlight current line
 filetype plugin indent on   " load filetype-specific indent files

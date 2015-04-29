@@ -1,24 +1,29 @@
 ;; EQC Emacs Mode -- Configuration Start
-(add-to-list 'load-path "/usr/local/lib/erlang/lib/eqc-1.26.2/emacs/")
+(add-to-list 'load-path "/Users/alex/.erlangs/r16libs/eqc-1.32.1/emacs/")
 (autoload 'eqc-erlang-mode-hook "eqc-ext" "EQC Mode" t)
 (add-hook 'erlang-mode-hook 'eqc-erlang-mode-hook)
 (setq eqc-max-menu-length 30)
-(setq eqc-root-dir "/usr/local/lib/erlang/lib/eqc-1.26.2")
+(setq eqc-root-dir "/Users/alex/.erlangs/r16libs/eqc-1.32.1")
 ;; EQC Emacs Mode -- Configuration End
 
 ;; setup erlang mode
-(setq erlang-root-dir "/Users/alex/erlangs/current")
-(setq erlang-lib-dir (concat erlang-root-dir "/lib/erlang/lib"))
+(setq erlang-root-dir "/Users/alex/.erlangs/current")
+(setq erlang-lib-dir (concat erlang-root-dir "/lib/"))
 
-(setq load-path 
-      (cons (concat erlang-lib-dir 
-		    "/"  
-		    (car (directory-files erlang-lib-dir nil "^tools\-")) 
-		    "/emacs" )
-      load-path))
-(setq exec-path (cons (concat erlang-root-dir "/" "bin") exec-path))
+(add-to-list 'load-path 
+      (concat erlang-lib-dir 
+	    "/"  
+	    (car (directory-files erlang-lib-dir nil "^tools\-")) 
+	    "/emacs" ))
+(add-to-list 'exec-path (concat erlang-root-dir "/" "bin"))
 (require 'erlang-start)
 (require 'erlang-flymake)
+
+;; setup Wrangler for Erlang
+(add-to-list 'load-path
+    "/usr/local/lib/erlang/lib/wrangler-1.1.01/elisp/")
+(require 'wrangler)
+(load-library "graphviz-dot-mode")
 
 ;; load dtl files in html-mode
 (add-to-list 'auto-mode-alist '("\\.dtl\\'" . html-mode))

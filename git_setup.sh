@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source /usr/local/Cellar/git/1.8.5.1/etc/bash_completion.d/git-prompt.sh
-source /usr/local/Cellar/git/1.8.5.1/etc/bash_completion.d/git-completion.bash
+source /usr/local/opt/git/etc/bash_completion.d/git-prompt.sh
+source /usr/local/opt/git/etc/bash_completion.d/git-completion.bash
 
 ## Add git branch
 PS1='\[\e[4m\e[34m\]\t:\W\[\e[0;33m\]$(__git_ps1 "(%s)") \[\e[m\]\$ '; [[ $EUID == 0 ]] &&

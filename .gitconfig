@@ -4,14 +4,43 @@
 
 
 [alias]
-l80 = "!git log --abbrev-commit --date=short --pretty=format:'%h%x00%cd%x00%s%x00%an%x00%d'| less -R"
+	l80 = "!git log --abbrev-commit --date=short --pretty=format:'%h%x00%cd%x00%s%x00%an%x00%d'| less -R"
 	d = difftool
 	co = checkout
+	up = "!git remote update -p; git merge --ff-only @{u}"
 [credential]
 	helper = osxkeychain
-[diff]
-	tool = vimdiff
-[difftool]
-	prompt = false
 [core]
 	excludesfile = /Users/alex/.gitignore_global
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[push]
+	default = current
+[diff]
+  tool = bcomp
+[difftool]
+  prompt = false
+[difftool "bcomp"]
+  trustExitCode = true
+  cmd = "/usr/local/bin/bcomp" "$LOCAL" "$REMOTE"
+[merge]
+  tool = bcomp
+[mergetool]
+  prompt = false
+[mergetool "bcomp"]
+  trustExitCode = true
+  cmd = "/usr/local/bin/bcomp" "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+# [diff]
+# 	tool = vimdiff
+# [difftool]
+# 	prompt = false
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
