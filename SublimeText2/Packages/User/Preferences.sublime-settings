@@ -1,0 +1,16 @@
+{
+	"bold_folder_labels": true,
+	"caret_style": "smooth",
+	"color_scheme": "Packages/Color Scheme - Default/IDLE.tmTheme",
+	"font_size": 16.0,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage",
+		"Erlang"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"theme": "Watson.sublime-theme",
+	"wide_caret": true
+}

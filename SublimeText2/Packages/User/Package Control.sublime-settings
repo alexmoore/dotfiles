@@ -1,0 +1,30 @@
+{
+	"auto_upgrade_last_run": null,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"CoffeeScript",
+		"CTags",
+		"CTags for PHP",
+		"Github Tools",
+		"GitHubinator",
+		"hextoASCII",
+		"Indent XML",
+		"Markdown Extended",
+		"Monokai Extended",
+		"Package Control",
+		"Pretty JSON",
+		"Sass",
+		"Shell Turtlestein",
+		"Sublime-Erlang",
+		"SublimeBlockCursor",
+		"SublimErl",
+		"Theme - Watson"
+	],
+	"repositories":
+	[
+		"https://github.com/fjl/Sublime-Erlang"
+	]
+}
