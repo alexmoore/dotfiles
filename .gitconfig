@@ -2,7 +2,6 @@
 	name = Alex Moore
 	email = moore.alex@gmail.com
 
-
 [alias]
 	l80 = "!git log --abbrev-commit --date=short --pretty=format:'%h%x00%cd%x00%s%x00%an%x00%d'| less -R"
 	d = difftool
@@ -12,26 +11,14 @@
 	helper = osxkeychain
 [core]
 	excludesfile = /Users/alex/.gitignore_global
+        autocrlf = input
+	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
 [filter "media"]
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
 [push]
 	default = current
-[diff]
-  tool = bcomp
-[difftool]
-  prompt = false
-[difftool "bcomp"]
-  trustExitCode = true
-  cmd = "/usr/local/bin/bcomp" "$LOCAL" "$REMOTE"
-[merge]
-  tool = bcomp
-[mergetool]
-  prompt = false
-[mergetool "bcomp"]
-  trustExitCode = true
-  cmd = "/usr/local/bin/bcomp" "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 # [diff]
 # 	tool = vimdiff
 # [difftool]
@@ -44,3 +31,36 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[diff]
+	tool = bc3
+[difftool]
+    prompt = false
+[merge]
+	tool = bc3
+[mergetool]
+	bc3 = trustExitCode
+    prompt = false
+[color]
+	ui = always
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[difftool "bc3"]
+	trustExitCode = true

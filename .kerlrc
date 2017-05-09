@@ -1,0 +1,8 @@
+KERL_BASE_DIR=/Users/alex/erlang
+KERL_DOWNLOAD_DIR=/Users/alex/erlang/archives
+KERL_BUILD_DIR=/Users/alex/erlang/builds
+KERL_GIT_DIR=/Users/alex/erlang/gits
+KERL_DEFAULT_INSTALL_DIR=/Users/alex/erlang/installs
+KERL_BUILD_BACKEND=git
+KERL_CONFIGURE_OPTIONS="--enable-darwin-64bit --enable-hipe --enable-vm-probes --with-dynamic-trace=dtrace --enable-kernel-poll --enable-threads --enable-smp-support --with-wx"
+KERL_CONFIGURE_DISABLE_APPLICATIONS="odbc"
